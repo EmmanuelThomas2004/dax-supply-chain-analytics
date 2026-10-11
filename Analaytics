@@ -1,0 +1,11 @@
+@'
+Total Sales = SUM(Orders[Sales])
+
+Total Profit = SUM(Orders[Profit])
+
+Profit Margin % = DIVIDE([Total Profit], [Total Sales], 0) * 100
+
+Average Order Value = DIVIDE([Total Sales], DISTINCTCOUNT(Orders[Order Id]), 0)
+
+Total Orders = DISTINCTCOUNT(Orders[Order Id])
+'@ | Set-Content -Encoding UTF8 DAX_Measures.dax
